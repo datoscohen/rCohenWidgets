@@ -1,0 +1,18 @@
+Package: rCohenWidgets
+Title: Widgets de react usados en Data & BI Cohen
+Version: 0.0.0.9000
+Authors@R:  c(
+    person("Augusto", "Hassel", , "ahassel@cohen.com.ar", role = c("aut", "cre")),
+    person("Cohen S.A.", role = "cph")
+  )
+Description: Conjunto de widgets creados con react usados en
+    diversas aplicaciones dentro del area de Data & BI en
+    Cohen.
+License: file LICENSE
+URL: https://github.com/datoscohen/rCohenWidgets
+BugReports: https://github.com/datoscohen/rCohenWidgets/issues
+Depends: 
+    R (>= 4.0.5)
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.2
