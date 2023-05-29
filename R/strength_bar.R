@@ -39,7 +39,10 @@ strengthBarInput <- function(inputId,
 
 #' Actualizar strengthBar widget
 #'
-#' <Add Description>
+#' @param session
+#' @param inputId
+#' @param value Character. Valor nuevo que va a tomar el input
+#' @param configuration
 updateStrengthBarInput <- function(session, inputId, value, configuration = NULL) {
   message <- list(value = value)
   if (!is.null(configuration)) message$configuration <- configuration
