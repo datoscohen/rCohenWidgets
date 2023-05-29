@@ -1,10 +1,12 @@
 library(shiny)
-library(rCohenWidgets)
+devtools::load_all()
 
 ui <- fluidPage(
-  titlePanel("reactR Input Example"),
-  strengthBarInput("textInput"),
-  textOutput("textOutput")
+  column(
+    width = 2,
+    strengthBarInput("textInput"),
+    textOutput("textOutput")
+  )
 )
 
 server <- function(input, output, session) {
