@@ -2,8 +2,9 @@ library(shiny)
 devtools::load_all()
 
 ui <- fluidPage(
+  fontawesome::fa_html_dependency(),
   column(
-    width = 2,
+    width = 6,
     strengthBarInput("textInput"),
     textOutput("textOutput")
   )
