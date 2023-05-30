@@ -8,7 +8,6 @@ const PasswordInputBar = ({ configuration, value, setValue }) => {
 
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
-    setValue([e.target.value, newScore]);
   };
 
   const handleScoreChange = (score, feedback) => {

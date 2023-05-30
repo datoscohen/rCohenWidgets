@@ -13,7 +13,6 @@ NULL
 #' @param minLength Numeric. La cantidad minima de caracteres para que no aparezca la leyenda definida en \code{shortScoreWord}
 #' @param shortScoreWord Character. Texto que se muestra cuando no se alcanzan la cantidad minima de caracteres
 strengthBarInput <- function(inputId,
-                             default = "",
                              scoreWords = list("Insegura", "Mala", "Regular", "Buena", "Excelente"),
                              minLength = 4,
                              shortScoreWord = "Muy Corta") {
@@ -27,7 +26,7 @@ strengthBarInput <- function(inputId,
       package = "rCohenWidgets",
       script = "strengthBar.js"
     ),
-    default,
+    NULL,
     list(
       scoreWords     = scoreWords,
       shortScoreWord = shortScoreWord,
