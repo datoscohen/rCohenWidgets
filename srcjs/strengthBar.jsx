@@ -4,6 +4,7 @@ import PasswordStrengthBar from 'react-password-strength-bar';
 const PasswordInputBar = ({ configuration, value, setValue }) => {
   const [password, setPassword] = React.useState("");
   const [newScore, setScore] = React.useState(0);
+  const firstUpdate = React.useRef(true);
 
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
@@ -11,10 +12,14 @@ const PasswordInputBar = ({ configuration, value, setValue }) => {
   };
 
   const handleScoreChange = (score, feedback) => {
-    setScore(score); // update the score state
-    if (score) {
-      setValue([password, score])
+    if (firstUpdate.current) {
+      firstUpdate.current = false;
+      return;
     }
+
+    setScore(score); // update the score state
+    setValue([password, score])
+
   };
 
   return (
