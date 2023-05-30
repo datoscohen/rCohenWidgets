@@ -6,12 +6,15 @@
 \usage{
 strengthBarInput(
   inputId,
+  default = list(password = ""),
   scoreWords = list("Insegura", "Mala", "Regular", "Buena", "Excelente"),
   minLength = 4,
   shortScoreWord = "Muy Corta"
 )
 }
 \arguments{
+\item{default}{Character. Valor que va a tomar el input por defecto}
+
 \item{scoreWords}{List. El nombre para cada estado de la barra, tienen que ser cinco.}
 
 \item{minLength}{Numeric. La cantidad minima de caracteres para que no aparezca la leyenda definida en \code{shortScoreWord}}
