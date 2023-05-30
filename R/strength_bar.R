@@ -7,8 +7,10 @@ NULL
 
 #' React Password Strength Bar
 #'
+#' Este input recibe una clave y e indica en la barra inferior y valida su fortaleza según cinco
+#' estados posibles, siendo el mayor el de mayor seguridad.
+#'
 #' @param inputId
-#' @param default Character. Valor que va a tomar el input por defecto
 #' @param scoreWords List. El nombre para cada estado de la barra, tienen que ser cinco.
 #' @param minLength Numeric. La cantidad minima de caracteres para que no aparezca la leyenda definida en \code{shortScoreWord}
 #' @param shortScoreWord Character. Texto que se muestra cuando no se alcanzan la cantidad minima de caracteres
@@ -17,33 +19,21 @@ strengthBarInput <- function(inputId,
                              minLength = 4,
                              shortScoreWord = "Muy Corta") {
   reactR::createReactShinyInput(
-    inputId,
-    "strengthBar",
-    htmltools::htmlDependency(
+    inputId       = inputId,
+    class         = "strengthBar",
+    dependencies  = htmltools::htmlDependency(
       name = "strengthBar-input",
       version = "1.0.0",
       src = "www/rCohenWidgets/strengthBar",
       package = "rCohenWidgets",
       script = "strengthBar.js"
     ),
-    NULL,
-    list(
+    default       = NULL,
+    configuration = list(
       scoreWords     = scoreWords,
       shortScoreWord = shortScoreWord,
       minLength      = minLength
     ),
-    htmltools::tags$span
+    container     = htmltools::tags$span
   )
-}
-
-#' Actualizar strengthBar widget
-#'
-#' @param session
-#' @param inputId
-#' @param value Character. Valor nuevo que va a tomar el input
-#' @param configuration
-updateStrengthBarInput <- function(session, inputId, value, configuration = NULL) {
-  message <- list(value = value)
-  if (!is.null(configuration)) message$configuration <- configuration
-  session$sendInputMessage(inputId, message);
 }

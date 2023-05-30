@@ -6,15 +6,12 @@
 \usage{
 strengthBarInput(
   inputId,
-  default = "",
   scoreWords = list("Insegura", "Mala", "Regular", "Buena", "Excelente"),
   minLength = 4,
   shortScoreWord = "Muy Corta"
 )
 }
 \arguments{
-\item{default}{Character. Valor que va a tomar el input por defecto}
-
 \item{scoreWords}{List. El nombre para cada estado de la barra, tienen que ser cinco.}
 
 \item{minLength}{Numeric. La cantidad minima de caracteres para que no aparezca la leyenda definida en \code{shortScoreWord}}
@@ -22,5 +19,6 @@ strengthBarInput(
 \item{shortScoreWord}{Character. Texto que se muestra cuando no se alcanzan la cantidad minima de caracteres}
 }
 \description{
-React Password Strength Bar
+Este input recibe una clave y e indica en la barra inferior y valida su fortaleza según cinco
+estados posibles, siendo el mayor el de mayor seguridad.
 }
