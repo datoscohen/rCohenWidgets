@@ -4,7 +4,7 @@ import PasswordStrengthBar from 'react-password-strength-bar';
 const PasswordInputBar = ({ configuration, value, setValue }) => {
  return (
   <div>
-    <div class="form-group shiny-input-container">
+    <div class="form-group shiny-input-container" style={{ width: '100%' }}>
       <label class="control-label" id="password_new-label" for="password_new">
       <i class="fas fa-lock" role="presentation" aria-label="lock icon"></i>
         &nbsp;Nueva Contraseña
