@@ -21,7 +21,38 @@ strengthBarInput(
 
 \item{shortScoreWord}{Character. Texto que se muestra cuando no se alcanzan la cantidad minima de caracteres}
 }
+\value{
+Un widget de entrada de shiny.
+}
 \description{
-Este input recibe una clave y e indica en la barra inferior y valida su fortaleza según cinco
-estados posibles, siendo el mayor el de mayor seguridad.
+Esta función proporciona un widget de entrada de contraseña para Shiny, que incluye una
+barra de fortaleza de contraseña. La barra de fortaleza muestra la seguridad del texto
+ingresado basándose en cinco posibles estados, siendo el estado mayor el más seguro.
+El widget de entrada crea una lista en Shiny que contiene el texto ingresado y la
+puntuación de seguridad, que varía de 0 a 4.
+}
+\examples{
+\dontrun{
+library(shiny)
+
+ui <- fluidPage(
+  titlePanel("Ejemplo de Barra de Fortaleza de Contraseña"),
+  sidebarLayout(
+    sidebarPanel(
+      strengthBarInput("contrasena", default = list(password = ""))
+    ),
+    mainPanel(
+      verbatimTextOutput("output")
+    )
+  )
+)
+
+server <- function(input, output) {
+  output$output <- renderPrint({
+    input$contrasena
+  })
+}
+
+shinyApp(ui = ui, server = server)
+}
 }
