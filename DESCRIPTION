@@ -9,7 +9,8 @@ Description: Conjunto de widgets creados con react usados en
     diversas aplicaciones dentro del area de Data & BI en
     Cohen.
 License: file LICENSE
-URL: https://github.com/datoscohen/rCohenWidgets
+URL: https://github.com/datoscohen/rCohenWidgets,
+    https://datoscohen.github.io/rCohenWidgets/
 BugReports: https://github.com/datoscohen/rCohenWidgets/issues
 Depends: 
     R (>= 4.0.5)
@@ -18,5 +19,6 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
 Imports: 
     htmltools,
+    pkgdown,
     reactR,
     shiny (>= 1.7.4)

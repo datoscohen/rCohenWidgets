@@ -8,3 +8,7 @@
 ^package\.json$
 ^webpack\.config\.js$
 ^yarn\.lock$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
+^\.github$
