@@ -57,7 +57,7 @@ strengthBarInput <- function(inputId,
   )
 
   checkmate::assert_numeric(
-    x           = 2 ,
+    x           = minLength ,
     any.missing = FALSE,
     len         = 1L
   )
