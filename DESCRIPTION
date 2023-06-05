@@ -3,6 +3,7 @@ Title: Widgets de react usados en Data & BI Cohen
 Version: 0.0.0.9000
 Authors@R: c(
     person("Augusto", "Hassel", , "ahassel@cohen.com.ar", role = c("aut", "cre")),
+    person("Juan P.", "Dugo", email = "jdugo@cohen.com.ar", role = "aut"),
     person("Cohen S.A.", role = "cph")
   )
 Description: Conjunto de widgets creados con react usados en
@@ -18,7 +19,7 @@ Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
 Imports: 
+    checkmate,
     htmltools,
-    pkgdown,
     reactR,
     shiny (>= 1.7.4)
