@@ -7,6 +7,7 @@
 
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+[![R-CMD-check](https://github.com/datoscohen/rCohenWidgets/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/datoscohen/rCohenWidgets/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 El propósito principal de rCohenWidgets es proporcionar la capacidad de

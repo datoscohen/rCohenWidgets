@@ -17,6 +17,7 @@ knitr::opts_chunk$set(
 
 <!-- badges: start -->
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+[![R-CMD-check](https://github.com/datoscohen/rCohenWidgets/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/datoscohen/rCohenWidgets/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 El propósito principal de rCohenWidgets es proporcionar la capacidad de integrar componentes y bibliotecas de React en una aplicación Shiny. Aunque nuestra atención se centra principalmente en React, no limitamos su alcance exclusivamente a este framework. Estamos abiertos a incorporar funciones elaboradas con Javascript y otros frameworks. Nuestro objetivo es ampliar continuamente las funcionalidades de esta librería para potenciar el desarrollo de aplicaciones Shiny más versátiles y ricas en características.
