@@ -7,7 +7,9 @@ NULL
 #' React Password Strength Bar
 #'
 #' Esta función proporciona un widget de entrada de contraseña para Shiny, que incluye una
-#' barra de fortaleza de contraseña. La barra de fortaleza muestra la seguridad del texto
+#' barra de fortaleza de contraseña proveniente de la libreria
+#' [react-password-strength-bar](https://www.npmjs.com/package/react-password-strength-bar).
+#' La barra de fortaleza muestra la seguridad del texto
 #' ingresado basándose en cinco posibles estados, siendo el estado mayor el más seguro.
 #' El widget de entrada crea una lista en Shiny que contiene el texto ingresado y la
 #' puntuación de seguridad, que varía de 0 a 4.

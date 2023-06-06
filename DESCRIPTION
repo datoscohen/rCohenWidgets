@@ -1,6 +1,6 @@
 Package: rCohenWidgets
 Title: Widgets de react usados en Data & BI Cohen
-Version: 0.0.0.9000
+Version: 0.1.0
 Authors@R: c(
     person("Augusto", "Hassel", , "ahassel@cohen.com.ar", role = c("aut", "cre")),
     person("Juan P.", "Dugo", email = "jdugo@cohen.com.ar", role = "aut"),
