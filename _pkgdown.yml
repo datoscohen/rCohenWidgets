@@ -2,3 +2,7 @@ url: https://datoscohen.github.io/rCohenWidgets/
 template:
   bootstrap: 5
 
+reference:
+- title: Inputs
+- contents:
+  - strengthBarInput
