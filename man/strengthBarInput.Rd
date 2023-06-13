@@ -7,26 +7,30 @@
 strengthBarInput(
   inputId,
   default = list(password = ""),
-  scoreWords = list("Insegura", "Mala", "Regular", "Buena", "Excelente"),
+  scoreWords = c("Insegura", "Mala", "Regular", "Buena", "Excelente"),
   minLength = 4,
   shortScoreWord = "Muy Corta"
 )
 }
 \arguments{
-\item{default}{Character. Valor que va a tomar el input por defecto}
+\item{inputId}{Character. Id del input.}
 
-\item{scoreWords}{List. El nombre para cada estado de la barra, tienen que ser cinco.}
+\item{default}{List. Valor que va a tomar el input por defecto, puede ser \code{NULL} también.}
 
-\item{minLength}{Numeric. La cantidad minima de caracteres para que no aparezca la leyenda definida en \code{shortScoreWord}}
+\item{scoreWords}{Character. El nombre para cada estado de la barra, tienen que ser cinco.}
 
-\item{shortScoreWord}{Character. Texto que se muestra cuando no se alcanzan la cantidad minima de caracteres}
+\item{minLength}{Numeric. La cantidad mínima de caracteres para que no aparezca la leyenda definida en \code{shortScoreWord}.}
+
+\item{shortScoreWord}{Character. Texto que se muestra cuando no se alcanzan la cantidad mínima de caracteres.}
 }
 \value{
 Un widget de entrada de shiny.
 }
 \description{
 Esta función proporciona un widget de entrada de contraseña para Shiny, que incluye una
-barra de fortaleza de contraseña. La barra de fortaleza muestra la seguridad del texto
+barra de fortaleza de contraseña proveniente de la libreria
+\href{https://www.npmjs.com/package/react-password-strength-bar}{react-password-strength-bar}.
+La barra de fortaleza muestra la seguridad del texto
 ingresado basándose en cinco posibles estados, siendo el estado mayor el más seguro.
 El widget de entrada crea una lista en Shiny que contiene el texto ingresado y la
 puntuación de seguridad, que varía de 0 a 4.
