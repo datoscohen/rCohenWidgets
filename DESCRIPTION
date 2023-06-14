@@ -1,6 +1,6 @@
 Package: rCohenWidgets
 Title: Widgets de react usados en Data & BI Cohen
-Version: 0.1.0
+Version: 0.1.1
 Authors@R: c(
     person("Augusto", "Hassel", , "ahassel@cohen.com.ar", role = c("aut", "cre")),
     person("Juan P.", "Dugo", email = "jdugo@cohen.com.ar", role = "aut"),
@@ -23,3 +23,5 @@ Imports:
     htmltools,
     reactR,
     shiny (>= 1.7.4)
+Suggests: 
+    devtools

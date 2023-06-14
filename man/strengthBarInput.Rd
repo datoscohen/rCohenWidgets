@@ -6,16 +6,19 @@
 \usage{
 strengthBarInput(
   inputId,
-  default = list(password = ""),
+  label = "Contraseña",
+  icon = "lock",
   scoreWords = c("Insegura", "Mala", "Regular", "Buena", "Excelente"),
-  minLength = 4,
+  minLength = 6,
   shortScoreWord = "Muy Corta"
 )
 }
 \arguments{
 \item{inputId}{Character. Id del input.}
 
-\item{default}{List. Valor que va a tomar el input por defecto, puede ser \code{NULL} también.}
+\item{label}{Character. Texto del input.}
+
+\item{icon}{Character. Icono que aparece al lado del texto del input.}
 
 \item{scoreWords}{Character. El nombre para cada estado de la barra, tienen que ser cinco.}
 
@@ -24,7 +27,7 @@ strengthBarInput(
 \item{shortScoreWord}{Character. Texto que se muestra cuando no se alcanzan la cantidad mínima de caracteres.}
 }
 \value{
-Un widget de entrada de shiny.
+Lista con valor del input y nivel de seguridad.
 }
 \description{
 Esta función proporciona un widget de entrada de contraseña para Shiny, que incluye una
@@ -38,25 +41,34 @@ puntuación de seguridad, que varía de 0 a 4.
 \examples{
 \dontrun{
 library(shiny)
+devtools::load_all()
 
 ui <- fluidPage(
-  titlePanel("Ejemplo de Barra de Fortaleza de Contraseña"),
-  sidebarLayout(
-    sidebarPanel(
-      strengthBarInput("contrasena", default = list(password = ""))
-    ),
-    mainPanel(
-      verbatimTextOutput("output")
-    )
+  fontawesome::fa_html_dependency(),
+  column(
+    width = 6,
+    strengthBarInput("textInput"),
+    textOutput("textOutput"),
+    actionButton("calcular", "Calcular")
   )
 )
 
-server <- function(input, output) {
-  output$output <- renderPrint({
-    input$contrasena
+server <- function(input, output, session) {
+
+  valor <- reactiveValues(password = "", score = 0)
+
+  observeEvent(input$calcular, {
+    valor$password <- input$textInput$password
+    valor$score <- input$textInput$score
+  })
+
+  output$textOutput <- renderText({
+    glue::glue(
+      "Password: {valor$password} | Score: {valor$score}"
+    )
   })
 }
 
-shinyApp(ui = ui, server = server)
+shinyApp(ui, server)
 }
 }

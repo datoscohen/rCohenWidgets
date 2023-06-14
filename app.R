@@ -7,29 +7,23 @@ ui <- fluidPage(
     width = 6,
     strengthBarInput("textInput"),
     textOutput("textOutput"),
-    actionButton("aceptar", "Aceptar")
+    actionButton("calcular", "Calcular")
   )
 )
 
 server <- function(input, output, session) {
 
-  result <- eventReactive(input$aceptar, {
+  valor <- reactiveValues(password = "", score = 0)
 
-    if (is.null(input$textInput) || input$textInput[[2]] != 4) {
-      showNotification("Error: Password no es suficientemente segura.")
-      NULL
-    } else {
-      input$textInput[[1]]
-    }
-
+  observeEvent(input$calcular, {
+    valor$password <- input$textInput$password
+    valor$score <- input$textInput$score
   })
 
   output$textOutput <- renderText({
-    result()
-  })
-
-  observeEvent(input$textInput, {
-    print(input$textInput)
+    glue::glue(
+      "Password: {valor$password} | Score: {valor$score}"
+    )
   })
 }
 
